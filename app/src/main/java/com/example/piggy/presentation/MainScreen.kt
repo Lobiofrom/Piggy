@@ -2,7 +2,6 @@ package com.example.piggy.presentation
 
 import androidx.compose.animation.Animatable
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -147,7 +146,7 @@ fun MainScreen(
 
                 is States.Success -> {
                     TabRow(
-                        modifier = Modifier.padding(horizontal = 16.dp),
+                        modifier = Modifier.padding(top = 6.dp, start = 16.dp, end = 16.dp),
                         selectedTabIndex = tabIndex,
                         divider = {},
                         indicator = {
@@ -175,7 +174,7 @@ fun MainScreen(
                                 .background(color = color.value, shape = tabShape)
                                 .height(40.dp)
                             Row(
-                                horizontalArrangement = Arrangement.SpaceEvenly
+                                modifier = Modifier.padding(horizontal = 3.dp)
                             ) {
                                 Tab(
                                     text = {
