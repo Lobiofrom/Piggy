@@ -133,8 +133,17 @@ fun AddScreen(
                         },
                         Modifier
                             .align(Alignment.CenterVertically),
-                        enabled = if (isChecked) text.isNotEmpty() && text2.isNotEmpty() && text3.isNotEmpty()
-                        else text.isNotEmpty() && text2.isNotEmpty()
+                        enabled = if (isChecked) {
+                            text.isNotEmpty() &&
+                                    text2.isNotEmpty() &&
+                                    text3.isNotEmpty() &&
+                                    text2.matches(Regex("[0-9]+")) &&
+                                    text3.matches(Regex("[0-9]+"))
+                        } else {
+                            text.isNotEmpty()
+                                    && text2.isNotEmpty() &&
+                                    text2.matches(Regex("[0-9]+"))
+                        }
                     ) {
                         Icon(
                             Icons.Filled.Check,
