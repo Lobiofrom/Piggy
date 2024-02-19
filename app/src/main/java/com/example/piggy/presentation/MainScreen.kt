@@ -87,7 +87,7 @@ fun MainScreen(
                 colors = TopAppBarDefaults.topAppBarColors(
                     containerColor = Color(0xFF4A148C)
                 ),
-                modifier = modifier
+                modifier = Modifier
                     .statusBarsPadding()
                     .clip(RoundedCornerShape(bottomStart = 8.dp, bottomEnd = 8.dp)),
                 title = {
@@ -215,7 +215,7 @@ fun MainScreen(
                     when (tabIndex) {
                         0 -> {
                             LazyColumn(
-                                modifier = modifier
+                                modifier = Modifier
                                     .fillMaxWidth()
                                     .align(Alignment.CenterHorizontally)
                             ) {
@@ -231,7 +231,7 @@ fun MainScreen(
                                     }
                                 }
                                 item {
-                                    Spacer(modifier = Modifier.height(70.dp))
+                                    Spacer(modifier = Modifier.height(95.dp))
                                 }
                             }
                         }

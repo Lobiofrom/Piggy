@@ -20,7 +20,6 @@ fun MyApp(
         }
         composable(route = "addScreen") {
             AddScreen(
-                modifier = modifier,
                 navController = navController
             )
         }

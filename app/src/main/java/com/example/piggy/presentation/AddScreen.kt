@@ -62,7 +62,6 @@ import java.util.Locale
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AddScreen(
-    modifier: Modifier,
     navController: NavController,
     dbViewModel: DbViewModel = koinViewModel()
 ) {
@@ -88,7 +87,7 @@ fun AddScreen(
         mutableStateOf(false)
     }
     Column(
-        modifier = modifier
+        modifier = Modifier
             .fillMaxSize()
     ) {
         TopAppBar(
@@ -134,15 +133,15 @@ fun AddScreen(
                         Modifier
                             .align(Alignment.CenterVertically),
                         enabled = if (isChecked) {
-                            text.isNotEmpty() &&
-                                    text2.isNotEmpty() &&
-                                    text3.isNotEmpty() &&
-                                    text2.matches(Regex("[0-9]+")) &&
-                                    text3.matches(Regex("[0-9]+"))
+                            text.isNotEmpty()
+                                    && text2.isNotEmpty()
+                                    && text3.isNotEmpty()
+                                    && text2.matches(Regex("[0-9]+"))
+                                    && text3.matches(Regex("[0-9]+"))
                         } else {
                             text.isNotEmpty()
-                                    && text2.isNotEmpty() &&
-                                    text2.matches(Regex("[0-9]+"))
+                                    && text2.isNotEmpty()
+                                    && text2.matches(Regex("[0-9]+"))
                         }
                     ) {
                         Icon(
@@ -155,7 +154,7 @@ fun AddScreen(
             }
         )
         Column(
-            modifier = modifier
+            modifier = Modifier
                 .fillMaxSize()
                 .verticalScroll(rememberScrollState())
         ) {
