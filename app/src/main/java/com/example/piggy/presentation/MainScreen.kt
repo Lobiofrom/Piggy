@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBarsPadding
@@ -214,9 +214,7 @@ fun MainScreen(
                     when (tabIndex) {
                         0 -> {
                             LazyColumn(
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .align(Alignment.CenterHorizontally)
+                                modifier = Modifier.navigationBarsPadding()
                             ) {
                                 items(list) { content ->
                                     when (content) {
@@ -230,7 +228,7 @@ fun MainScreen(
                                     }
                                 }
                                 item {
-                                    Spacer(modifier = Modifier.height(95.dp))
+                                    Spacer(modifier = Modifier.height(80.dp))
                                 }
                             }
                         }
